@@ -48,22 +48,25 @@ for path in files_to_look_at:
         ))
 
 services = []
+client_params = [['FIPS'], ['DualStack'], ['FIPS', 'DualStack'], []]
+
 for pat in url_patterns:
     for region in random.sample(regions_list, 2):
-        services.append(
-            {
-                "service_id": pat.service_id,
-                "operation": pat.operation,
-                "input_params": pat.get_params(),
-                "region": region,
-                "client_params": [],
-                "expected_endpoint": ""
-            }
-        )
+        for cp in client_params:
+            services.append(
+                {
+                    "service_id": pat.service_id,
+                    "operation": pat.operation,
+                    "input_params": pat.get_params(),
+                    "region": region,
+                    "client_params": cp,
+                    "expected_endpoint": ""
+                }
+            )
 
-serialized_patterns = json.dumps(services, indent=2).replace('"::', 'new RegExp("').replace('::"', '")')
+# serialized_patterns = json.dumps(services, indent=2).replace('"::', 'new RegExp("').replace('::"', '")')
+serialized_patterns = json.dumps(services, indent=2)
 f = open('input_endpoint_test.json', 'w', encoding='utf-8')
+f.truncate(0)
 f.write(serialized_patterns)
 f.close()
-
-# print(f"URLPATTERNS = {serialized_patterns};")
