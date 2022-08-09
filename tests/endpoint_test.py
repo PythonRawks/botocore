@@ -12,7 +12,6 @@ class UrlPattern(NamedTuple):
     service_id: str
     operation: str
     url_raw: str
-    contains_regex: bool
 
     def get_params(self):
         matches = re.findall(r"\{([^\{\}]+)\}", self.url_raw)
@@ -37,14 +36,10 @@ for path in files_to_look_at:
         service_model = json.load(f)
     for opname, opval in service_model.get("operations", {}).items():
         uri = opval['http']['requestUri']
-        contains_regex = False
-        if "{" in uri:
-            contains_regex = True
         url_patterns.append(UrlPattern(
             service_id=service_model["metadata"]["serviceId"],
             operation=opname,
             url_raw=uri,
-            contains_regex=contains_regex
         ))
 
 services = []
@@ -64,7 +59,6 @@ for pat in url_patterns:
                 }
             )
 
-# serialized_patterns = json.dumps(services, indent=2).replace('"::', 'new RegExp("').replace('::"', '")')
 serialized_patterns = json.dumps(services, indent=2)
 f = open('input_endpoint_test.json', 'w', encoding='utf-8')
 f.truncate(0)
