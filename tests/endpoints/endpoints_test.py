@@ -32,9 +32,9 @@ def test_action_with_client_use_arn(self, service_instance):
             region,
             client_params
         )
+        self.http_stubber.add_response()
         operation_instance = getattr(self.client, operation)
         operation_instance(params)
-        # self.http_stubber.add_response()
 
         # resulting endpoint 
         return self.http_stubber.requests[1]
