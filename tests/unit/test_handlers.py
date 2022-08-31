@@ -1017,13 +1017,33 @@ class TestHandlers(BaseSessionTest):
         )
         self.assertEqual(response, 'v4')
 
-    def test_set_operation_specific_signer_s3v4(self):
-        signing_name = 's3'
-        context = {'auth_type': 'v4'}
+    def test_set_operation_specific_signer_v4a(self):
+        signing_name = 'myservice'
+        context = {'auth_type': 'v4a'}
         response = handlers.set_operation_specific_signer(
             context=context, signing_name=signing_name
         )
-        self.assertEqual(response, 's3v4')
+        self.assertEqual(response, 'v4a')
+        # for v4a, context gets updated in place
+        self.assertIsNotNone(context.get('signing'))
+        self.assertEqual(context['signing']['region'], '*')
+        self.assertEqual(context['signing']['signing_name'], signing_name)
+
+    def test_set_operation_specific_signer_v4a_existing_signing_context(self):
+        signing_name = 'myservice'
+        context = {
+            'auth_type': 'v4a',
+            'signing': {'foo': 'bar', 'region': 'abc'},
+        }
+        handlers.set_operation_specific_signer(
+            context=context, signing_name=signing_name
+        )
+        # region has been updated
+        self.assertEqual(context['signing']['region'], '*')
+        # signing_name has been added
+        self.assertEqual(context['signing']['signing_name'], signing_name)
+        # foo remained untouched
+        self.assertEqual(context['signing']['foo'], 'bar')
 
     def test_set_operation_specific_signer_v4_unsinged_payload(self):
         signing_name = 'myservice'
@@ -1042,6 +1062,18 @@ class TestHandlers(BaseSessionTest):
         )
         self.assertEqual(response, 's3v4')
         self.assertEqual(context.get('payload_signing_enabled'), False)
+
+
+@pytest.mark.parametrize(
+    'auth_type, expected_response', [('v4', 's3v4'), ('v4a', 's3v4a')]
+)
+def test_set_operation_specific_signer_s3v4(auth_type, expected_response):
+    signing_name = 's3'
+    context = {'auth_type': auth_type}
+    response = handlers.set_operation_specific_signer(
+        context=context, signing_name=signing_name
+    )
+    assert response == expected_response
 
 
 class TestConvertStringBodyToFileLikeObject(BaseSessionTest):
@@ -1519,25 +1551,57 @@ class TestPrependToHost(unittest.TestCase):
 @pytest.mark.parametrize(
     'environ, header_before, header_after',
     [
-        ({'AWS_LAMBDA_FUNCTION_NAME': 'foo'}, {}, {}),
-        ({'_X_AMZ_TRACE_ID': 'bar'}, {}, {}),
+        ({}, {}, {}),
+        ({'AWS_LAMBDA_FUNCTION_NAME': 'some-function'}, {}, {}),
         (
-            {'AWS_LAMBDA_FUNCTION_NAME': 'foo', '_X_AMZ_TRACE_ID': 'bar'},
+            {
+                '_X_AMZN_TRACE_ID': (
+                    'Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;'
+                    'Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2'
+                )
+            },
             {},
-            {'X-Amzn-Trace-Id': 'bar'},
+            {},
         ),
         (
-            {'AWS_LAMBDA_FUNCTION_NAME': 'foo', '_X_AMZ_TRACE_ID': 'bar'},
-            {'X-Amzn-Trace-Id': 'fizz'},
-            {'X-Amzn-Trace-Id': 'fizz'},
+            {
+                'AWS_LAMBDA_FUNCTION_NAME': 'some-function',
+                '_X_AMZN_TRACE_ID': (
+                    'Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;'
+                    'Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2'
+                ),
+            },
+            {},
+            {
+                'X-Amzn-Trace-Id': (
+                    'Root=1-5759e988-bd862e3fe1be46a994272793;Parent=53995c3f42cd8ad8;'
+                    'Sampled=1;lineage=a87bd80c:0,68fd508a:5,c512fbe3:2'
+                )
+            },
+        ),
+        (
+            {
+                'AWS_LAMBDA_FUNCTION_NAME': 'some-function',
+                '_X_AMZN_TRACE_ID': 'EnvValue',
+            },
+            {'X-Amzn-Trace-Id': 'OriginalValue'},
+            {'X-Amzn-Trace-Id': 'OriginalValue'},
         ),
         (
             {
                 'AWS_LAMBDA_FUNCTION_NAME': 'foo',
-                '_X_AMZ_TRACE_ID': 'first\nsecond',
+                '_X_AMZN_TRACE_ID': 'first\nsecond',
             },
             {},
             {'X-Amzn-Trace-Id': 'first%0Asecond'},
+        ),
+        (
+            {
+                'AWS_LAMBDA_FUNCTION_NAME': 'foo',
+                '_X_AMZN_TRACE_ID': 'test123-=;:+&[]{}\"\'',
+            },
+            {},
+            {'X-Amzn-Trace-Id': 'test123-=;:+&[]{}\"\''},
         ),
     ],
 )

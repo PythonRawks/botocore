@@ -2,6 +2,340 @@
 CHANGELOG
 =========
 
+1.27.63
+=======
+
+* enhancement:Endpoints: Deprecate SSL common name
+* api-change:``greengrassv2``: Adds topologyFilter to ListInstalledComponentsRequest which allows filtration of components by ROOT or ALL (including root and dependency components). Adds lastStatusChangeTimestamp to ListInstalledComponents response to show the last time a component changed state on a device.
+* api-change:``identitystore``: Documentation updates for the Identity Store CLI Reference.
+* api-change:``lookoutequipment``: This release adds new apis for providing labels.
+* api-change:``macie2``: This release of the Amazon Macie API adds support for using allow lists to define specific text and text patterns to ignore when inspecting data sources for sensitive data.
+* api-change:``sso-admin``: Documentation updates for the AWS IAM Identity Center CLI Reference.
+* api-change:``sso``: Documentation updates for the AWS IAM Identity Center Portal CLI Reference.
+
+
+1.27.62
+=======
+
+* api-change:``fsx``: Documentation updates for Amazon FSx for NetApp ONTAP.
+* api-change:``voice-id``: Amazon Connect Voice ID now detects voice spoofing.  When a prospective fraudster tries to spoof caller audio using audio playback or synthesized speech, Voice ID will return a risk score and outcome to indicate the how likely it is that the voice is spoofed.
+
+
+1.27.61
+=======
+
+* api-change:``mediapackage``: This release adds Ads AdTriggers and AdsOnDeliveryRestrictions to describe calls for CMAF endpoints on MediaPackage.
+* api-change:``rds``: Removes support for RDS Custom from DBInstanceClass in ModifyDBInstance
+
+
+1.27.60
+=======
+
+* enhancement:Identity: TokenProvider added for bearer auth support
+* api-change:``elbv2``: Update elbv2 client to latest version
+* api-change:``gamelift``: This release adds support for eight EC2 local zones as fleet locations; Atlanta, Chicago, Dallas, Denver, Houston, Kansas City (us-east-1-mci-1a), Los Angeles, and Phoenix. It also adds support for C5d, C6a, C6i, and R5d EC2 instance families.
+* api-change:``iotwireless``: This release includes a new feature for the customers to enable the LoRa gateways to send out beacons for Class B devices and an option to select one or more gateways for Class C devices when sending the LoRaWAN downlink messages.
+* api-change:``ivschat``: Documentation change for IVS Chat API Reference. Doc-only update to add a paragraph on ARNs to the Welcome section.
+* api-change:``panorama``: Support sorting and filtering in ListDevices API, and add more fields to device listings and single device detail
+* api-change:``sso-oidc``: Updated required request parameters on IAM Identity Center's OIDC CreateToken action.
+
+
+1.27.59
+=======
+
+* api-change:``cloudfront``: Adds support for CloudFront origin access control (OAC), making it possible to restrict public access to S3 bucket origins in all AWS Regions, those with SSE-KMS, and more.
+* api-change:``config``: AWS Config now supports ConformancePackTemplate documents in SSM Docs for the deployment and update of conformance packs.
+* api-change:``iam``: Documentation updates for AWS Identity and Access Management (IAM).
+* api-change:``ivs``: Documentation Change for IVS API Reference - Doc-only update to type field description for CreateChannel and UpdateChannel actions and for Channel data type. Also added Amazon Resource Names (ARNs) paragraph to Welcome section.
+* api-change:``quicksight``: Added a new optional property DashboardVisual under ExperienceConfiguration parameter of GenerateEmbedUrlForAnonymousUser and GenerateEmbedUrlForRegisteredUser API operations. This supports embedding of specific visuals in QuickSight dashboards.
+* api-change:``transfer``: Documentation updates for AWS Transfer Family
+
+
+1.27.58
+=======
+
+* api-change:``rds``: RDS for Oracle supports Oracle Data Guard switchover and read replica backups.
+* api-change:``sso-admin``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+
+
+1.27.57
+=======
+
+* api-change:``docdb``: Update document for volume clone
+* api-change:``ec2``: R6a instances are powered by 3rd generation AMD EPYC (Milan) processors delivering all-core turbo frequency of 3.6 GHz. C6id, M6id, and R6id instances are powered by 3rd generation Intel Xeon Scalable processor (Ice Lake) delivering all-core turbo frequency of 3.5 GHz.
+* api-change:``forecast``: releasing What-If Analysis APIs and update ARN regex pattern to be more strict in accordance with security recommendation
+* api-change:``forecastquery``: releasing What-If Analysis APIs
+* api-change:``iotsitewise``: Enable non-unique asset names under different hierarchies
+* api-change:``lexv2-models``: Update lexv2-models client to latest version
+* api-change:``securityhub``: Added new resource details objects to ASFF, including resources for AwsBackupBackupVault, AwsBackupBackupPlan and AwsBackupRecoveryPoint. Added FixAvailable, FixedInVersion and Remediation  to Vulnerability.
+* api-change:``support-app``: This is the initial SDK release for the AWS Support App in Slack.
+
+
+1.27.56
+=======
+
+* api-change:``connect``: This release adds SearchSecurityProfiles API which can be used to search for Security Profile resources within a Connect Instance.
+* api-change:``ivschat``: Documentation Change for IVS Chat API Reference - Doc-only update to change text/description for tags field.
+* api-change:``kendra``: This release adds support for a new authentication type - Personal Access Token (PAT) for confluence server.
+* api-change:``lookoutmetrics``: This release is to make GetDataQualityMetrics API publicly available.
+
+
+1.27.55
+=======
+
+* api-change:``chime-sdk-media-pipelines``: The Amazon Chime SDK now supports live streaming of real-time video from the Amazon Chime SDK sessions to streaming platforms such as Amazon IVS and Amazon Elemental MediaLive. We have also added support for concatenation to create a single media capture file.
+* api-change:``cloudwatch``: Update cloudwatch client to latest version
+* api-change:``cognito-idp``: This change is being made simply to fix the public documentation based on the models. We have included the PasswordChange and ResendCode events, along with the Pass, Fail and InProgress status. We have removed the Success and Failure status which are never returned by our APIs.
+* api-change:``dynamodb``: This release adds support for importing data from S3 into a new DynamoDB table
+* api-change:``ec2``: This release adds support for VPN log options , a new feature allowing S2S VPN connections to send IKE activity logs to CloudWatch Logs
+* api-change:``networkmanager``: Add TransitGatewayPeeringAttachmentId property to TransitGatewayPeering Model
+
+
+1.27.54
+=======
+
+* api-change:``appmesh``: AWS App Mesh release to support Multiple Listener and Access Log Format feature
+* api-change:``connectcampaigns``: Updated exceptions for Amazon Connect Outbound Campaign api's.
+* api-change:``kendra``: This release adds Zendesk connector (which allows you to specify Zendesk SAAS platform as data source), Proxy Support for Sharepoint and Confluence Server (which allows you to specify the proxy configuration if proxy is required to connect to your Sharepoint/Confluence Server as data source).
+* api-change:``lakeformation``: This release adds a new API support "AssumeDecoratedRoleWithSAML" and also release updates the corresponding documentation.
+* api-change:``lambda``: Added support for customization of Consumer Group ID for MSK and Kafka Event Source Mappings.
+* api-change:``lexv2-models``: Update lexv2-models client to latest version
+* api-change:``rds``: Adds support for Internet Protocol Version 6 (IPv6) for RDS Aurora database clusters.
+* api-change:``secretsmanager``: Documentation updates for Secrets Manager.
+
+
+1.27.53
+=======
+
+* api-change:``rekognition``: This release adds APIs which support copying an Amazon Rekognition Custom Labels model and managing project policies across AWS account.
+* api-change:``servicecatalog``: Documentation updates for Service Catalog
+
+
+1.27.52
+=======
+
+* enhancement:AWSCRT: Upgrade awscrt version to 0.14.0
+* api-change:``cloudfront``: Adds Http 3 support to distributions
+* api-change:``identitystore``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* api-change:``sso``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* api-change:``wisdom``: This release introduces a new API PutFeedback that allows submitting feedback to Wisdom on content relevance.
+
+
+1.27.51
+=======
+
+* api-change:``amp``: This release adds log APIs that allow customers to manage logging for their Amazon Managed Service for Prometheus workspaces.
+* api-change:``chime-sdk-messaging``: The Amazon Chime SDK now supports channels with up to one million participants with elastic channels.
+* api-change:``ivs``: Updates various list api MaxResults ranges
+* api-change:``personalize-runtime``: This release provides support for promotions in AWS Personalize runtime.
+* api-change:``rds``: Adds support for RDS Custom to DBInstanceClass in ModifyDBInstance
+
+
+1.27.50
+=======
+
+* api-change:``backupstorage``: This is the first public release of AWS Backup Storage. We are exposing some previously-internal APIs for use by external services. These APIs are not meant to be used directly by customers.
+* api-change:``glue``: Add support for Python 3.9 AWS Glue Python Shell jobs
+* api-change:``privatenetworks``: This is the initial SDK release for AWS Private 5G. AWS Private 5G is a managed service that makes it easy to deploy, operate, and scale your own private mobile network at your on-premises location.
+
+
+1.27.49
+=======
+
+* api-change:``dlm``: This release adds support for excluding specific data (non-boot) volumes from multi-volume snapshot sets created by snapshot lifecycle policies
+* api-change:``ec2``: This release adds support for excluding specific data (non-root) volumes from multi-volume snapshot sets created from instances.
+
+
+1.27.48
+=======
+
+* api-change:``cloudwatch``: Update cloudwatch client to latest version
+* api-change:``location``: Amazon Location Service now allows circular geofences in BatchPutGeofence, PutGeofence, and GetGeofence  APIs.
+* api-change:``sagemaker-a2i-runtime``: Fix bug with parsing ISO-8601 CreationTime in Java SDK in DescribeHumanLoop
+* api-change:``sagemaker``: Amazon SageMaker Automatic Model Tuning now supports specifying multiple alternate EC2 instance types to make tuning jobs more robust when the preferred instance type is not available due to insufficient capacity.
+
+
+1.27.47
+=======
+
+* api-change:``glue``: Add an option to run non-urgent or non-time sensitive Glue Jobs on spare capacity
+* api-change:``identitystore``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* api-change:``iotwireless``: AWS IoT Wireless release support for sidewalk data reliability.
+* api-change:``pinpoint``: Adds support for Advance Quiet Time in Journeys. Adds RefreshOnSegmentUpdate and WaitForQuietTime to JourneyResponse.
+* api-change:``quicksight``: A series of documentation updates to the QuickSight API reference.
+* api-change:``sso-admin``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* api-change:``sso-oidc``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+* api-change:``sso``: Documentation updates to reflect service rename - AWS IAM Identity Center (successor to AWS Single Sign-On)
+
+
+1.27.46
+=======
+
+* enhancement:Lambda: Add support for Trace ID in Lambda environments
+* api-change:``chime-sdk-meetings``: Adds support for Tags on Amazon Chime SDK WebRTC sessions
+* api-change:``config``: Add resourceType enums for Athena, GlobalAccelerator, Detective and EC2 types
+* api-change:``dms``: Documentation updates for Database Migration Service (DMS).
+* api-change:``iot``: The release is to support attach a provisioning template to CACert for JITP function,  Customer now doesn't have to hardcode a roleArn and templateBody during register a CACert to enable JITP.
+
+
+1.27.45
+=======
+
+* api-change:``cognito-idp``: Add a new exception type, ForbiddenException, that is returned when request is not allowed
+* api-change:``wafv2``: You can now associate an AWS WAF web ACL with an Amazon Cognito user pool.
+
+
+1.27.44
+=======
+
+* api-change:``license-manager-user-subscriptions``: This release supports user based subscription for Microsoft Visual Studio Professional and Enterprise on EC2.
+* api-change:``personalize``: This release adds support for incremental bulk ingestion for the Personalize CreateDatasetImportJob API.
+
+
+1.27.43
+=======
+
+* api-change:``config``: Documentation update for PutConfigRule and PutOrganizationConfigRule
+* api-change:``workspaces``: This release introduces ModifySamlProperties, a new API that allows control of SAML properties associated with a WorkSpaces directory. The DescribeWorkspaceDirectories API will now additionally return SAML properties in its responses.
+
+
+1.27.42
+=======
+
+* bugfix:TraceId: Rollback bugfix for obeying _X_AMZN_TRACE_ID env var
+
+
+1.27.41
+=======
+
+* bugfix:Config: Obey _X_AMZN_TRACE_ID environment variable instead of _X_AMZ_TRACE_ID
+* api-change:``ec2``: Documentation updates for Amazon EC2.
+* api-change:``fsx``: Documentation updates for Amazon FSx
+* api-change:``shield``: AWS Shield Advanced now supports filtering for ListProtections and ListProtectionGroups.
+
+
+1.27.40
+=======
+
+* api-change:``ec2``: Documentation updates for VM Import/Export.
+* api-change:``es``: This release adds support for gp3 EBS (Elastic Block Store) storage.
+* api-change:``lookoutvision``: This release introduces support for image segmentation models and updates CPU accelerator options for models hosted on edge devices.
+* api-change:``opensearch``: This release adds support for gp3 EBS (Elastic Block Store) storage.
+
+
+1.27.39
+=======
+
+* api-change:``auditmanager``: This release adds an exceeded quota exception to several APIs. We added a ServiceQuotaExceededException for the following operations: CreateAssessment, CreateControl, CreateAssessmentFramework, and UpdateAssessmentStatus.
+* api-change:``chime``: Chime VoiceConnector will now support ValidateE911Address which will allow customers to prevalidate their addresses included in their SIP invites for emergency calling
+* api-change:``config``: This release adds ListConformancePackComplianceScores API to support the new compliance score feature, which provides a percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack.
+* api-change:``globalaccelerator``: Global Accelerator now supports dual-stack accelerators, enabling support for IPv4 and IPv6 traffic.
+* api-change:``marketplace-catalog``: The SDK for the StartChangeSet API will now automatically set and use an idempotency token in the ClientRequestToken request parameter if the customer does not provide it.
+* api-change:``polly``: Amazon Polly adds new English and Hindi voice - Kajal. Kajal is available as Neural voice only.
+* api-change:``ssm``: Adding doc updates for OpsCenter support in Service Setting actions.
+* api-change:``workspaces``: Added CreateWorkspaceImage API to create a new WorkSpace image from an existing WorkSpace.
+
+
+1.27.38
+=======
+
+* api-change:``appsync``: Adds support for a new API to evaluate mapping templates with mock data, allowing you to remotely unit test your AppSync resolvers and functions.
+* api-change:``detective``: Added the ability to get data source package information for the behavior graph. Graph administrators can now start (or stop) optional datasources on the behavior graph.
+* api-change:``guardduty``: Amazon GuardDuty introduces a new Malware Protection feature that triggers malware scan on selected EC2 instance resources, after the service detects a potentially malicious activity.
+* api-change:``lookoutvision``: This release introduces support for the automatic scaling of inference units used by Amazon Lookout for Vision models.
+* api-change:``macie2``: This release adds support for retrieving (revealing) sample occurrences of sensitive data that Amazon Macie detects and reports in findings.
+* api-change:``rds``: Adds support for using RDS Proxies with RDS for MariaDB databases.
+* api-change:``rekognition``: This release introduces support for the automatic scaling of inference units used by Amazon Rekognition Custom Labels models.
+* api-change:``securityhub``: Documentation updates for AWS Security Hub
+* api-change:``transfer``: AWS Transfer Family now supports Applicability Statement 2 (AS2), a network protocol used for the secure and reliable transfer of critical Business-to-Business (B2B) data over the public internet using HTTP/HTTPS as the transport mechanism.
+
+
+1.27.37
+=======
+
+* api-change:``autoscaling``: Documentation update for Amazon EC2 Auto Scaling.
+
+
+1.27.36
+=======
+
+* api-change:``account``: This release enables customers to manage the primary contact information for their AWS accounts. For more information, see https://docs.aws.amazon.com/accounts/latest/reference/API_Operations.html
+* api-change:``ec2``: Added support for EC2 M1 Mac instances. For more information, please visit aws.amazon.com/mac.
+* api-change:``iotdeviceadvisor``: Added new service feature (Early access only) - Long Duration Test, where customers can test the IoT device to observe how it behaves when the device is in operation for longer period.
+* api-change:``medialive``: Link devices now support remote rebooting. Link devices now support maintenance windows. Maintenance windows allow a Link device to install software updates without stopping the MediaLive channel. The channel will experience a brief loss of input from the device while updates are installed.
+* api-change:``rds``: This release adds the "ModifyActivityStream" API with support for audit policy state locking and unlocking.
+* api-change:``transcribe``: Remove unsupported language codes for StartTranscriptionJob and update VocabularyFileUri for UpdateMedicalVocabulary
+
+
+1.27.35
+=======
+
+* api-change:``athena``: This feature allows customers to retrieve runtime statistics for completed queries
+* api-change:``cloudwatch``: Update cloudwatch client to latest version
+* api-change:``dms``: Documentation updates for Database Migration Service (DMS).
+* api-change:``docdb``: Enable copy-on-write restore type
+* api-change:``ec2-instance-connect``: This release includes a new exception type "EC2InstanceUnavailableException" for SendSSHPublicKey and SendSerialConsoleSSHPublicKey APIs.
+* api-change:``frauddetector``: The release introduces Account Takeover Insights (ATI) model. The ATI model detects fraud relating to account takeover. This release also adds support for new variable types: ARE_CREDENTIALS_VALID and SESSION_ID and adds new structures to Model Version APIs.
+* api-change:``iotsitewise``: Added asynchronous API to ingest bulk historical and current data into IoT SiteWise.
+* api-change:``kendra``: Amazon Kendra now provides Oauth2 support for SharePoint Online. For more information, see https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html
+* api-change:``network-firewall``: Network Firewall now supports referencing dynamic IP sets from stateful rule groups, for IP sets stored in Amazon VPC prefix lists.
+* api-change:``rds``: Adds support for creating an RDS Proxy for an RDS for MariaDB database.
+
+
+1.27.34
+=======
+
+* api-change:``acm-pca``: AWS Certificate Manager (ACM) Private Certificate Authority (PCA) documentation updates
+* api-change:``iot``: GA release the ability to enable/disable IoT Fleet Indexing for Device Defender and Named Shadow information, and search them through IoT Fleet Indexing APIs. This includes Named Shadow Selection as a part of the UpdateIndexingConfiguration API.
+
+
+1.27.33
+=======
+
+* api-change:``devops-guru``: Added new APIs for log anomaly detection feature.
+* api-change:``glue``: Documentation updates for AWS Glue Job Timeout and Autoscaling
+* api-change:``sagemaker-edge``: Amazon SageMaker Edge Manager provides lightweight model deployment feature to deploy machine learning models on requested devices.
+* api-change:``sagemaker``: Fixed an issue with cross account QueryLineage
+* api-change:``workspaces``: Increased the character limit of the login message from 850 to 2000 characters.
+
+
+1.27.32
+=======
+
+* api-change:``discovery``: Add AWS Agentless Collector details to the GetDiscoverySummary API response
+* api-change:``ec2``: Documentation updates for Amazon EC2.
+* api-change:``elasticache``: Adding AutoMinorVersionUpgrade in the DescribeReplicationGroups API
+* api-change:``kms``: Added support for the SM2 KeySpec in China Partition Regions
+* api-change:``mediapackage``: This release adds "IncludeIframeOnlyStream" for Dash endpoints and increases the number of supported video and audio encryption presets for Speke v2
+* api-change:``sagemaker``: Amazon SageMaker Edge Manager provides lightweight model deployment feature to deploy machine learning models on requested devices.
+* api-change:``sso-admin``: AWS SSO now supports attaching customer managed policies and a permissions boundary to your permission sets. This release adds new API operations to manage and view the customer managed policies and the permissions boundary for a given permission set.
+
+
+1.27.31
+=======
+
+* api-change:``datasync``: Documentation updates for AWS DataSync regarding configuring Amazon FSx for ONTAP location security groups and SMB user permissions.
+* api-change:``drs``: Changed existing APIs to allow choosing a dynamic volume type for replicating volumes, to reduce costs for customers.
+* api-change:``evidently``: This release adds support for the new segmentation feature.
+* api-change:``wafv2``: This SDK release provide customers ability to add sensitivity level for WAF SQLI Match Statements.
+
+
+1.27.30
+=======
+
+* api-change:``athena``: This release updates data types that contain either QueryExecutionId, NamedQueryId or ExpectedBucketOwner. Ids must be between 1 and 128 characters and contain only non-whitespace characters. ExpectedBucketOwner must be 12-digit string.
+* api-change:``codeartifact``: This release introduces Package Origin Controls, a mechanism used to counteract Dependency Confusion attacks. Adds two new APIs, PutPackageOriginConfiguration and DescribePackage, and updates the ListPackage, DescribePackageVersion and ListPackageVersion APIs in support of the feature.
+* api-change:``config``: Update ResourceType enum with values for Route53Resolver, Batch, DMS, Workspaces, Stepfunctions, SageMaker, ElasticLoadBalancingV2, MSK types
+* api-change:``ec2``: This release adds flow logs for Transit Gateway to  allow customers to gain deeper visibility and insights into network traffic through their Transit Gateways.
+* api-change:``fms``: Adds support for strict ordering in stateful rule groups in Network Firewall policies.
+* api-change:``glue``: This release adds an additional worker type for Glue Streaming jobs.
+* api-change:``inspector2``: This release adds support for Inspector V2 scan configurations through the get and update configuration APIs. Currently this allows configuring ECR automated re-scan duration to lifetime or 180 days or 30 days.
+* api-change:``kendra``: This release adds AccessControlConfigurations which allow you to redefine your document level access control without the need for content re-indexing.
+* api-change:``nimble``: Amazon Nimble Studio adds support for IAM-based access to AWS resources for Nimble Studio components and custom studio components. Studio Component scripts use these roles on Nimble Studio workstation to mount filesystems, access S3 buckets, or other configured resources in the Studio's AWS account
+* api-change:``outposts``: This release adds the ShipmentInformation and AssetInformationList fields to the GetOrder API response.
+* api-change:``sagemaker``: This release adds support for G5, P4d, and C6i instance types in Amazon SageMaker Inference and increases the number of hyperparameters that can be searched from 20 to 30 in Amazon SageMaker Automatic Model Tuning
+
+
 1.27.29
 =======
 
