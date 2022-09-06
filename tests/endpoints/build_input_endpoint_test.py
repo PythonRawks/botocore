@@ -16,7 +16,6 @@ def generate():
     for service in services:
         versions = sorted(loader.list_api_versions(service, 'service-2'))
         fpath = os.sep.join([base_dir, service, versions[-1], 'service-2.json'])    
-        # output_dict[service] = []
         regions_list = ["us-east-1", "us-east-2", "us-west-1", "us-west-2"]
         client_params = [['FIPS'], ['DualStack'], ['FIPS', 'DualStack'], []]
 
@@ -49,7 +48,7 @@ def generate():
 
 service_to_operation_map = generate()
 
-with open('output.json', 'w') as f:
+with open('input_endpoint_test.json', 'w') as f:
     f.write(json.dumps(service_to_operation_map))
 
 #-------------------------------------------
