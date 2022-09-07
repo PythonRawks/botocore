@@ -2,6 +2,7 @@
 from tests import ClientHTTPStubber
 from pathlib import Path
 from botocore.config import Config
+from botocore.compat import urlsplit
 import botocore.session
 import json
 
@@ -41,19 +42,36 @@ class TestWriteExpectedEndpoints():
             **kwargs
         )
         self.http_stubber.add_response(status=200)
-        print(self.http_stubber.requests)
-        request = self.http_stubber.requests[0]
-        return request
+        if (len(service_instance['operations'])):                
+            op = getattr(self.client, service_instance['operations'][0])
+            try:
+                op()
+            except:
+                return ""
+            request = self.http_stubber.requests[0]
+            # endpoint = urlsplit(request.url).netloc
+            # print(endpoint)
+            return request.url
+        else:
+            return ""
 
     def build_endpoint_output_file(self):
         current_file = Path(__file__)
         neighboring_file = current_file.parent / "input_endpoint_test.json"
+        output_file = current_file.parent / "output_endpoint_test.json"
 
         with (neighboring_file).open() as f:
             services = json.load(f)
             for service in services:
-                service.endpoint = self.test_endpoint_redirection(service_instance=service)
-                print(service.endpoint)
+                service['endpoint'] = self.test_endpoint_redirection(service_instance=service)
+                print(service['endpoint'])
+
+        output_file.unlink(missing_ok=True)
+        output_file.touch(exist_ok=True)
+        with (output_file).open(mode='w+') as out:
+            output_json = json.dumps(services)
+            out.write(output_json)
+  
 
 test_endpoints = TestWriteExpectedEndpoints()
 test_endpoints.build_endpoint_output_file()
