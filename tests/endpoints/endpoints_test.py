@@ -1,17 +1,20 @@
 
-from tests import ClientHTTPStubber
+from tests import ClientHTTPStubber, FreezeTime
 from pathlib import Path
 from botocore.config import Config
 from botocore.compat import urlsplit
 import botocore.session
 import json
+import datetime
 
 class TestWriteExpectedEndpoints():
     session = botocore.session.get_session()
+    date = datetime.datetime(2021, 8, 27, 0, 0, 0)
 
     def setUp(self):
         super().setUp()
 
+    @FreezeTime(botocore.auth.datetime, date=date)
     def create_client(self, **kwargs):
         client_kwargs = {
                             'region_name': kwargs['region_name'],
@@ -47,13 +50,14 @@ class TestWriteExpectedEndpoints():
             try:
                 op()
             except:
-                return ""
+                return "", ""
             request = self.http_stubber.requests[0]
-            # endpoint = urlsplit(request.url).netloc
-            # print(endpoint)
-            return request.url
+            auth_header = request.headers['Authorization']
+            signature = auth_header.decode().split("Signature=")[-1]
+
+            return request.url, signature
         else:
-            return ""
+            return "", ""
 
     def build_endpoint_output_file(self):
         current_file = Path(__file__)
@@ -63,8 +67,11 @@ class TestWriteExpectedEndpoints():
         with (neighboring_file).open() as f:
             services = json.load(f)
             for service in services:
-                service['endpoint'] = self.test_endpoint_redirection(service_instance=service)
-                print(service['endpoint'])
+                expected_endpoint, signature = self.test_endpoint_redirection(service_instance=service)
+                service['expected_endpoint'] = expected_endpoint
+                service['signature'] = signature
+                print(service['expected_endpoint'])
+                print(service['signature'])
 
         output_file.unlink(missing_ok=True)
         output_file.touch(exist_ok=True)
