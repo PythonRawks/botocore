@@ -1,11 +1,68 @@
 
-from tests import ClientHTTPStubber, FreezeTime, unittest
+from tests import ClientHTTPStubber, FreezeTime, unittest, mock, ContextDecorator
 from pathlib import Path
 from botocore.config import Config
 from botocore.compat import urlsplit
 import botocore.session
 import json
 import datetime
+import boto3
+import uuid
+
+# boto3.set_stream_logger('')
+class FreezeToken(ContextDecorator):
+    """
+    Context manager for mocking out datetime in arbitrary modules when creating
+    performing actions like signing which require point in time specificity.
+
+    :type module: module
+    :param module: reference to imported module to patch (e.g. botocore.auth.datetime)
+
+    :type date: datetime.datetime
+    :param date: datetime object specifying the output for utcnow()
+    """
+
+    def __init__(self, module, token=None):
+        if token is None:
+            token = '0bea188d-636d-49e9-9a49-5826105d7b74'
+        self.token = token
+        self.uuid_patcher = mock.patch.object(
+            module, 'uuid4', mock.Mock(return_value=token)
+        )
+
+    def __enter__(self, *args, **kwargs):
+        mock = self.uuid_patcher.start()
+        # mock.uuid4.return_value = self.token
+
+    def __exit__(self, *args, **kwargs):
+        self.uuid_patcher.stop()
+
+# class FreezeToken(ContextDecorator):
+#     """
+#     Context manager for mocking out datetime in arbitrary modules when creating
+#     performing actions like signing which require point in time specificity.
+
+#     :type module: module
+#     :param module: reference to imported module to patch (e.g. botocore.auth.datetime)
+
+#     :type date: datetime.datetime
+#     :param date: datetime object specifying the output for utcnow()
+#     """
+
+#     def __init__(self, module, token=None):
+#         if token is None:
+#             token = '0bea188d-636d-49e9-9a49-5826105d7b74'
+#         self.token = token
+#         self.uuid_patcher = mock.patch.object(
+#             module, 'uuid4', mock.Mock(wraps=uuid)
+#         )
+
+#     def __enter__(self, *args, **kwargs):
+#         mock = self.uuid_patcher.start()
+#         mock.uuid4.return_value = self.token
+
+#     def __exit__(self, *args, **kwargs):
+#         self.uuid_patcher.stop()
 
 class TestWriteExpectedEndpoints(unittest.TestCase):
     session = botocore.session.get_session()
@@ -14,7 +71,6 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
     def setUp(self):
         super().setUp()
 
-    @FreezeTime(botocore.auth.datetime, date=date)
     def create_client(self, **kwargs):
         client_kwargs = {
                             'region_name': kwargs['region_name'],
@@ -28,6 +84,8 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
         http_stubber.start()
         return client, http_stubber
 
+    @FreezeTime(botocore.auth.datetime, date=date)
+    @FreezeToken(botocore.handlers.uuid)
     def create_endpoints(self, service_instance, **kwargs):
         use_fips_endpoint = False
         use_dualstack_endpoint  = False
@@ -45,17 +103,16 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
             **kwargs
         )
         self.http_stubber.add_response(status=200)
-        if (len(service_instance['operations'])):                
+        if (len(service_instance['operations'])):
             op = getattr(self.client, service_instance['operations'][0])
             try:
                 op()
-            except:
+            except Exception as error:
                 return "", ""
             request = self.http_stubber.requests[0]
             auth_header = request.headers['Authorization']
-            signature = auth_header.decode().split("Signature=")[-1]
 
-            return request.url, signature
+            return request.url, auth_header.decode()
         else:
             return "", ""
 
@@ -67,11 +124,10 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
         with (neighboring_file).open() as f:
             services = json.load(f)
             for service in services:
+                print("service = " + service['service_name'])
                 expected_endpoint, signature = self.create_endpoints(service_instance=service)
                 service['expected_endpoint'] = expected_endpoint
                 service['signature'] = signature
-                print(service['expected_endpoint'])
-                print(service['signature'])
 
         output_file.unlink(missing_ok=True)
         output_file.touch(exist_ok=True)
@@ -83,120 +139,20 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
         current_file = Path(__file__)
         output_file = current_file.parent / "output_endpoint_test.json"
 
+        def test_endpoint_equal_expected(self, actual_endpoint, expected_endpoint):
+            self.assertEqual(actual_endpoint, expected_endpoint)
+
+        def test_signature_equal_expected(self, actual_signature, expected_signature):
+            self.assertEqual(actual_signature, expected_signature)
+
         with (output_file).open() as f:
             services = json.load(f)
             for service in services:
                 expected_endpoint, signature = self.create_endpoints(service_instance=service)
-                self.assertEqual(service['expected_endpoint'], expected_endpoint)
-                # failing for some reason atm
-                # self.assertEqual(service['signature'], signature) 
+                test_endpoint_equal_expected(self, service['expected_endpoint'], expected_endpoint)
+                test_signature_equal_expected(self, service['signature'], signature)
 
-  
 
-# test_endpoints = TestWriteExpectedEndpoints()
-# test_endpoints.build_endpoint_output_file()
 
-# from tests import ClientHTTPStubber, mock, create_session
-# from botocore.config import Config
-# import json
-# import datetime
-# from pathlib import Path
-# # todo:
-# #   1) add randome value to every param before creation of input_endpoint_test.json
-# #   2) after operation request, add authorization signature along with endpoint to validation result output file. 
-
-# def _get_patched_session():
-#     time_to_freeze = datetime.datetime.now(datetime.timezone.utc).isoformat()
-#     with mock.patch('os.environ') as environ:
-#         environ['AWS_ACCESS_KEY_ID'] = 'access_key'
-#         environ['AWS_SECRET_ACCESS_KEY'] = 'secret_key'
-#         environ['AWS_CONFIG_FILE'] = 'no-exist-foo'
-#         environ['EP20_TESTING_FREEZER_TIME'] = time_to_freeze
-#         environ.update(environ)
-#         session = create_session()
-#         return session
-
-# def create_stubbed_client(service_name, region, client_params, **kwargs):
-#     use_fips_endpoint = False
-#     use_dualstack_endpoint  = False
-#     session = _get_patched_session()
-
-#     if ('FIPS' in client_params):
-#         use_fips_endpoint = True
-#     if ('DualStack' in client_params):
-#         use_dualstack_endpoint = True
-#     config = Config(use_fips_endpoint=use_fips_endpoint, use_dualstack_endpoint=use_dualstack_endpoint)
-
-#     time_to_freeze = datetime.datetime.now(datetime.timezone.utc).isoformat()
-#     client = session.create_client(
-#         service_name, 
-#         region,
-#         aws_access_key_id='foo',
-#         aws_secret_access_key='bar',
-#         config=config, 
-#         **kwargs
-#     )
-#     http_stubber = ClientHTTPStubber(client)
-#     http_stubber.start()
-#     return client, http_stubber
-
-# def test_action_with_client_use_arn(service_instance):
-#         print(service_instance)
-#         service_name = service_instance["service_name"]
-#         params = service_instance["input_params"]
-#         operations = service_instance["operations"]
-#         client_params = service_instance["client_params"]
-#         region = service_instance["region"]
-        
-#         client, http_stubber = create_stubbed_client(
-#             service_name,
-#             region,
-#             client_params
-#         )
-#         http_stubber.add_response()
-#         operation_instance = getattr(client, operations[0])
-#         if (len(params)):
-#             operation_instance(params)
-#         else:
-#             operation_instance()
-
-#         # resulting endpoint 
-#         stubUrl = __getitem__(http_stubber.requests[0], "url")
-#         print(stubUrl)
-#         # print(http_stubber.requests[0])
-#         return http_stubber.requests[0]
-
-# # def test_action_with_client_use_arn(self, service_instance):
-# #         service_name = service_instance.service_name
-# #         params = service_instance.input_params
-# #         method = service_instance.method_to_execute
-# #         fips = service_instance.fips
-# #         dual_stack = service_instance.dual_stack
-# #         region = service_instance.region
-        
-# #         self.client, self.http_stubber = self.create_stubbed_client(
-# #             region,
-# #             service_name,
-# #             fips,
-# #             dual_stack
-# #         )
-# #         self.http_stubber.add_response()
-# #         self.client.method(params)
-# #         // when testing after data structure filled
-# #         self.assert_signature( self.http_stubber.requests[0])
-# #         self.assert_endpoint( self.http_stubber.requests[0].endpoint_url, 
-# #                                     service_instance.expected_endpoint)
-
-# current_file = Path(__file__)
-# neighboring_file = current_file.parent / "input_endpoint_test.json"
-
-# with (neighboring_file).open() as f:
-#     services = json.load(f)
-#     for service in services:
-#         service.endpoint = test_action_with_client_use_arn(service_instance=service)
-
-# services_with_endpoints = json.dumps(services)
-# f = open('output_endpoint_test.json', 'w', encoding='utf-8')
-# f.truncate(0)
-# f.write(services_with_endpoints)
-# f.close()
+test_endpoints = TestWriteExpectedEndpoints()
+test_endpoints.build_endpoint_output_file()
