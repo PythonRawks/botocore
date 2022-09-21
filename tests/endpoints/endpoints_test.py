@@ -105,14 +105,28 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
         self.http_stubber.add_response(status=200)
         if (len(service_instance['operations'])):
             op = getattr(self.client, service_instance['operations'][0])
-            try:
-                op()
-            except Exception as error:
-                return "", ""
+            if (len(service_instance['input_params']) == 0):
+                try:
+                    op()
+                except Exception as error:
+                    # print("service with operation error = " + service_instance['service_name'])
+                    # print (error)
+                    # raise
+                    return "", ""
+            else:
+                try:
+                    # op()
+                    op(**service_instance['input_params'])
+                except Exception as error:
+                    print("service with operation error = " + service_instance['service_name'])
+                    print (error)
+                    raise
+                    return "", ""
             request = self.http_stubber.requests[0]
             auth_header = request.headers['Authorization']
 
             return request.url, auth_header.decode()
+
         else:
             return "", ""
 
