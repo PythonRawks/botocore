@@ -8,19 +8,10 @@ import json
 import datetime
 import boto3
 import uuid
+import re
 
 # boto3.set_stream_logger('')
 class FreezeToken(ContextDecorator):
-    """
-    Context manager for mocking out datetime in arbitrary modules when creating
-    performing actions like signing which require point in time specificity.
-
-    :type module: module
-    :param module: reference to imported module to patch (e.g. botocore.auth.datetime)
-
-    :type date: datetime.datetime
-    :param date: datetime object specifying the output for utcnow()
-    """
 
     def __init__(self, module, token=None):
         if token is None:
@@ -36,33 +27,6 @@ class FreezeToken(ContextDecorator):
 
     def __exit__(self, *args, **kwargs):
         self.uuid_patcher.stop()
-
-# class FreezeToken(ContextDecorator):
-#     """
-#     Context manager for mocking out datetime in arbitrary modules when creating
-#     performing actions like signing which require point in time specificity.
-
-#     :type module: module
-#     :param module: reference to imported module to patch (e.g. botocore.auth.datetime)
-
-#     :type date: datetime.datetime
-#     :param date: datetime object specifying the output for utcnow()
-#     """
-
-#     def __init__(self, module, token=None):
-#         if token is None:
-#             token = '0bea188d-636d-49e9-9a49-5826105d7b74'
-#         self.token = token
-#         self.uuid_patcher = mock.patch.object(
-#             module, 'uuid4', mock.Mock(wraps=uuid)
-#         )
-
-#     def __enter__(self, *args, **kwargs):
-#         mock = self.uuid_patcher.start()
-#         mock.uuid4.return_value = self.token
-
-#     def __exit__(self, *args, **kwargs):
-#         self.uuid_patcher.stop()
 
 class TestWriteExpectedEndpoints(unittest.TestCase):
     session = botocore.session.get_session()
@@ -112,11 +76,16 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
                     return "", ""
             else:
                 try:
+                    for key, value in service_instance['input_params'].items():
+                        if (type(value) is str) :
+                            if (service_instance['input_params'][key] == "::REPLACE_DATE_TIME::") :
+                                service_instance['input_params'][key] = datetime.datetime(2002, 12, 4, 20, 30, 40)
+                                #  re.sub(r'datetime\.datetime\(([^)]*)\)', datetime(2011, 1, 1), value)
                     op(**service_instance['input_params'])
                 except Exception as error:
-                    # print("service with operation error = " + service_instance['service_name'])
-                    # print (error)
-                    # raise
+                    print("service with operation error = " + service_instance['service_name'])
+                    print (error)
+                    raise
                     return "", ""
             request = self.http_stubber.requests[0]
             try:    

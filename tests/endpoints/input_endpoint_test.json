@@ -22897,64 +22897,112 @@
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-2",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-2",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-2",
     "client_params": [],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "marketplacecommerceanalytics",
-    "operations": [],
-    "input_params": "",
+    "operations": ["generate_data_set"],
+    "input_params": {
+      "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
+      "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
+      "roleNameArn" : "stringstringstringstring",
+      "destinationS3BucketName" : "stringstringstringstring",
+      "snsTopicArn" : "stringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": [],
     "expected_endpoint": ""
