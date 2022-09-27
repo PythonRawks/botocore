@@ -34382,64 +34382,96 @@
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-west-1",
     "client_params": [],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-east-2",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-east-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-east-2",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso",
-    "operations": [],
-    "input_params": "",
+    "operations": ["get_role_credentials"],
+    "input_params": {
+      "roleName" : "string",
+      "accountId" : "stringstringstringstringstringstring",
+      "accessToken" : "stringstringstringstringstringstring"
+    },
     "region": "us-east-2",
     "client_params": [],
     "expected_endpoint": ""
@@ -34510,64 +34542,96 @@
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-west-1",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-west-1",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-west-1",
     "client_params": [],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-east-2",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-east-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-east-2",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
   },
   {
     "service_name": "sso-oidc",
-    "operations": [],
-    "input_params": "",
+    "operations": ["start_device_authorization"],
+    "input_params": {
+      "clientId" : "string",
+      "clientSecret" : "string",
+      "startUrl" : "string"
+    },
     "region": "us-east-2",
     "client_params": [],
     "expected_endpoint": ""

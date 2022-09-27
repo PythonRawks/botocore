@@ -109,23 +109,22 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
                 try:
                     op()
                 except Exception as error:
+                    return "", ""
+            else:
+                try:
+                    op(**service_instance['input_params'])
+                except Exception as error:
                     # print("service with operation error = " + service_instance['service_name'])
                     # print (error)
                     # raise
                     return "", ""
-            else:
-                try:
-                    # op()
-                    op(**service_instance['input_params'])
-                except Exception as error:
-                    print("service with operation error = " + service_instance['service_name'])
-                    print (error)
-                    raise
-                    return "", ""
             request = self.http_stubber.requests[0]
-            auth_header = request.headers['Authorization']
+            try:    
+                auth_header = request.headers['Authorization'].decode() # make authorization optional, request.headers.get("Authorization")
+            except:
+                auth_header = ''
 
-            return request.url, auth_header.decode()
+            return request.url, auth_header
 
         else:
             return "", ""
