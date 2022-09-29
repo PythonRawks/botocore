@@ -1,16 +1,13 @@
 
 from tests import ClientHTTPStubber, FreezeTime, unittest, mock, ContextDecorator
+from freezegun import freeze_time
 from pathlib import Path
 from botocore.config import Config
 from botocore.compat import urlsplit
 import botocore.session
 import json
 import datetime
-import boto3
-import uuid
-import re
 
-# boto3.set_stream_logger('')
 class FreezeToken(ContextDecorator):
 
     def __init__(self, module, token=None):
@@ -48,7 +45,7 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
         http_stubber.start()
         return client, http_stubber
 
-    @FreezeTime(botocore.auth.datetime, date=date)
+    @freeze_time(date)
     @FreezeToken(botocore.handlers.uuid)
     def create_endpoints(self, service_instance, **kwargs):
         use_fips_endpoint = False
@@ -76,16 +73,15 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
                     return "", ""
             else:
                 try:
+                    params = {}
                     for key, value in service_instance['input_params'].items():
+                        params[key] = value
                         if (type(value) is str) :
                             if (service_instance['input_params'][key] == "::REPLACE_DATE_TIME::") :
-                                service_instance['input_params'][key] = datetime.datetime(2002, 12, 4, 20, 30, 40)
-                                #  re.sub(r'datetime\.datetime\(([^)]*)\)', datetime(2011, 1, 1), value)
-                    op(**service_instance['input_params'])
+                                params[key] = datetime.datetime(2015, 1, 1)
+
+                    op(**params)
                 except Exception as error:
-                    print("service with operation error = " + service_instance['service_name'])
-                    print (error)
-                    raise
                     return "", ""
             request = self.http_stubber.requests[0]
             try:    

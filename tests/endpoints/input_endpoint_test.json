@@ -22902,8 +22902,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-2",
     "client_params": ["FIPS"],
@@ -22916,8 +22920,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-2",
     "client_params": ["DualStack"],
@@ -22930,8 +22938,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-2",
     "client_params": ["FIPS", "DualStack"],
@@ -22944,8 +22956,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-2",
     "client_params": [],
@@ -22958,8 +22974,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-1",
     "client_params": ["FIPS"],
@@ -22972,8 +22992,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-1",
     "client_params": ["DualStack"],
@@ -22986,8 +23010,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-1",
     "client_params": ["FIPS", "DualStack"],
@@ -23000,8 +23028,12 @@
       "dataSetType" : "customer_subscriber_hourly_monthly_subscriptions",
       "dataSetPublicationDate" : "::REPLACE_DATE_TIME::",
       "roleNameArn" : "stringstringstringstring",
-      "destinationS3BucketName" : "stringstringstringstring",
-      "snsTopicArn" : "stringstringstringstring"
+      "destinationS3BucketName" : "stringstringstring",
+      "destinationS3Prefix" : "stringstring",
+      "snsTopicArn" : "stringstringstringstring",
+      "customerDefinedValues" : {
+          "string": "stringstringstring"
+      }
     },
     "region": "us-west-1",
     "client_params": [],
