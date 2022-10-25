@@ -30536,6 +30536,222 @@
     "expected_endpoint": ""
   },
   {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
+    "region": "us-east-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
+    "region": "us-east-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
+    "region": "us-east-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
+    "region": "us-east-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-east-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-east-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-east-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-east-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"      
+    },
+    "region": "us-west-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["write_get_object_response"],
+    "input_params": {
+      "RequestRoute" : "stringstringstringstring",
+      "RequestToken" : "stringstringstringstring"   
+    },
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
     "service_name": "s3control",
     "operations": ["create_bucket"],
     "input_params": {"Bucket" : "string"},
@@ -30595,6 +30811,206 @@
     "service_name": "s3control",
     "operations": ["create_bucket"],
     "input_params": {"Bucket" : "string"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-1",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-1",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-1",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3control",
+    "operations": ["create_multi_region_access_point"],
+    "input_params": {
+      "AccountId" : "stringstringstringstring",
+      "ClientToken" : "stringstringstringstring",
+      "Details": {
+        "Name": "stringstringstringstring",
+        "PublicAccessBlock": {
+            "BlockPublicAcls": true,
+            "IgnorePublicAcls": true,
+            "BlockPublicPolicy": true,
+            "RestrictPublicBuckets": true
+        },
+        "Regions": [
+            {
+                "Bucket": "stringstringstringstring"
+            }
+        ]
+      }
+    },
     "region": "us-west-2",
     "client_params": [],
     "expected_endpoint": ""
