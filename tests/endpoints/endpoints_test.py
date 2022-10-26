@@ -50,12 +50,15 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
     def create_endpoints(self, service_instance, **kwargs):
         use_fips_endpoint = False
         use_dualstack_endpoint  = False
+        s3_disable_multiregion_access_points = False
 
         if ('FIPS' in service_instance['client_params']):
             use_fips_endpoint = True
         if ('DualStack' in service_instance['client_params']):
             use_dualstack_endpoint = True
-        config = Config(use_fips_endpoint=use_fips_endpoint, use_dualstack_endpoint=use_dualstack_endpoint)
+        if ('MRAP' in service_instance['client_params']):
+            s3_disable_multiregion_access_points = True
+        config = Config(use_fips_endpoint=use_fips_endpoint, use_dualstack_endpoint=use_dualstack_endpoint, s3={"s3_disable_multiregion_access_points": s3_disable_multiregion_access_points})
 
         self.client, self.http_stubber = self.create_client(
             region_name=service_instance['region'],

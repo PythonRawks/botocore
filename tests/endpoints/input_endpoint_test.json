@@ -30665,6 +30665,134 @@
   },
   {
     "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-east-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-east-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-east-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-east-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": ["FIPS"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["FIPS", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["DualStack", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["FIPS", "DualStack", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-east-2",
+    "client_params": ["MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["FIPS", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["DualStack", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["FIPS", "DualStack", "MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "region": "us-west-2",
+    "client_params": ["MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
     "operations": ["write_get_object_response"],
     "input_params": {
       "RequestRoute" : "stringstringstringstring",
