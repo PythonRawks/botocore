@@ -133,7 +133,6 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
                 test_endpoint_equal_expected(self, service['expected_endpoint'], expected_endpoint)
                 test_signature_equal_expected(self, service['signature'], signature)
 
-
-
+# make sure awscrt is installed before running
 test_endpoints = TestWriteExpectedEndpoints()
 test_endpoints.build_endpoint_output_file()

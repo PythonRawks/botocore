@@ -30602,7 +30602,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
@@ -30610,7 +30610,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
@@ -30618,7 +30618,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
@@ -30626,7 +30626,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": [],
     "expected_endpoint": ""
@@ -30634,7 +30634,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
@@ -30642,7 +30642,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
@@ -30650,7 +30650,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["FIPS", "DualStack"],
     "expected_endpoint": ""
@@ -30658,7 +30658,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": [],
     "expected_endpoint": ""
@@ -30730,7 +30730,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["FIPS", "MRAP"],
     "expected_endpoint": ""
@@ -30738,7 +30738,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["DualStack", "MRAP"],
     "expected_endpoint": ""
@@ -30746,7 +30746,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["FIPS", "DualStack", "MRAP"],
     "expected_endpoint": ""
@@ -30754,7 +30754,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-east-2",
     "client_params": ["MRAP"],
     "expected_endpoint": ""
@@ -30762,7 +30762,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["FIPS", "MRAP"],
     "expected_endpoint": ""
@@ -30770,7 +30770,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["DualStack", "MRAP"],
     "expected_endpoint": ""
@@ -30778,7 +30778,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["FIPS", "DualStack", "MRAP"],
     "expected_endpoint": ""
@@ -30786,7 +30786,7 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "mfzwi23gnjvgw.mrap.accesspoint.s3-global.amazonaws.com"},
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
     "region": "us-west-2",
     "client_params": ["MRAP"],
     "expected_endpoint": ""
