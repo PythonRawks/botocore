@@ -30682,43 +30682,75 @@
   {
     "service_name": "s3",
     "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
-    "region": "us-east-2",
-    "client_params": ["FIPS"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
-    "region": "us-east-2",
-    "client_params": ["DualStack"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
-    "region": "us-east-2",
-    "client_params": ["FIPS", "DualStack"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
-    "region": "us-east-2",
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
     "client_params": [],
     "expected_endpoint": ""
   },
   {
     "service_name": "s3",
     "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
     "region": "us-west-2",
-    "client_params": ["FIPS"],
+    "client_params": ["ArnRegion"],
     "expected_endpoint": ""
   },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/accesspoint/myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "us-gov-east-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "fips-us-gov-east-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "region": "fips-us-gov-east-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },  
   {
     "service_name": "s3",
     "operations": ["list_objects"],
@@ -30726,19 +30758,67 @@
     "region": "us-west-2",
     "client_params": ["DualStack"],
     "expected_endpoint": ""
-  },
+  },  
   {
     "service_name": "s3",
     "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost"},
     "region": "us-west-2",
-    "client_params": ["FIPS", "DualStack"],
+    "client_params": [],
     "expected_endpoint": ""
-  },
+  },  
   {
     "service_name": "s3",
     "operations": ["list_objects"],
-    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost::accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-outposts:us-gov-east-1:123456789012:outpost:op-01234567890123456:accesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:mybucket:object:foo"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-0123456.890123456:accesspoint:myaccesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },  
+  {
+    "service_name": "s3",
+    "operations": ["list_objects"],
+    "input_params": {"Bucket" : "arn:aws:s3:us-west-2:123456789012:outpost:op-01234567890123456:accesspoint:myaccesspoint"},
     "region": "us-west-2",
     "client_params": [],
     "expected_endpoint": ""
