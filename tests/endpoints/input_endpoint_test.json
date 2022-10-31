@@ -31089,6 +31089,86 @@
   },
   {
     "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "us-east-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "aws-global",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "cn-north-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "us-west-2",
+    "client_params": ["MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "aws-global",
+    "client_params": ["MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:mfzwi23gnjvgw.mrap"},
+    "region": "us-west-2",
+    "client_params": ["DualStack"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:myendpoint"},
+    "region": "us-west-2",
+    "client_params": ["MRAP"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:myendpoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3::123456789012:accesspoint:my.bucket"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
     "operations": ["write_get_object_response"],
     "input_params": {
       "RequestRoute" : "stringstringstringstring",
