@@ -30538,32 +30538,8 @@
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
-    "region": "us-east-2",
-    "client_params": ["FIPS"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
-    "region": "us-east-2",
-    "client_params": ["DualStack"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
-    "region": "us-east-2",
-    "client_params": ["FIPS", "DualStack"],
-    "expected_endpoint": ""
-  },
-  {
-    "service_name": "s3",
-    "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-2:123456789012:accesspoint/mybanner"},
-    "region": "us-east-2",
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-east-1",
     "client_params": [],
     "expected_endpoint": ""
   },
@@ -30572,23 +30548,247 @@
     "operations": ["delete_bucket"],
     "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
     "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybanner"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "s3-external-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "s3-external-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "aws-global",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "aws-global",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["DualStack", "ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner"},
+    "region": "cn-north-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3-object-lambda:cn-north-1:123456789012:accesspoint/mybanner"},
+    "region": "cn-north-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-cn:s3-object-lambda:cn-northwest-1:123456789012:accesspoint/mybanner"},
+    "region": "cn-north-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-gov-east-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"},
+    "region": "fips-us-gov-east-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"},
+    "region": "fips-us-gov-east-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner"},
+    "region": "fips-us-gov-east-1",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner"},
+    "region": "fips-us-gov-east-1",
+    "client_params": ["ArnRegion"],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-east-1:123456789012:accesspoint/mybanner"},
+    "region": "us-gov-east-1",
     "client_params": ["FIPS"],
     "expected_endpoint": ""
   },
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
-    "region": "us-west-2",
-    "client_params": ["DualStack"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-west-1:123456789012:accesspoint/mybanner"},
+    "region": "us-gov-east-1",
+    "client_params": ["FIPS", "ArnRegion"],
     "expected_endpoint": ""
   },
   {
     "service_name": "s3",
     "operations": ["delete_bucket"],
-    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
+    "input_params": {"Bucket" : "arn:aws:sqs:us-west-2:123456789012:someresource"},
     "region": "us-west-2",
-    "client_params": ["FIPS", "DualStack"],
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:bucket_name:mybucket"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda::123456789012:accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:fips-us-gov-west-1:123456789012:accesspoint/myendpoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws-us-gov:s3-object-lambda:us-gov-west-1-fips:123456789012:accesspoint/myendpoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2::accesspoint/mybanner"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123.45678.9012:accesspoint:mybucket"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:*"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:my.bucket"},
+    "region": "us-west-2",
+    "client_params": [],
+    "expected_endpoint": ""
+  },
+  {
+    "service_name": "s3",
+    "operations": ["delete_bucket"],
+    "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:mybucket:object:foo"},
+    "region": "us-west-2",
+    "client_params": [],
     "expected_endpoint": ""
   },
   {
