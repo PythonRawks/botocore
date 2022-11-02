@@ -68,12 +68,22 @@ class TestWriteExpectedEndpoints(unittest.TestCase):
                             "use_arn_region": use_arn_region
                         })
 
-        self.client, self.http_stubber = self.create_client(
-            region_name=service_instance['region'],
-            service_name=service_instance['service_name'], 
-            config=config, 
-            **kwargs
-        )
+        if ('EndpointUrl' in service_instance['client_params']):
+            self.client, self.http_stubber = self.create_client(
+                region_name=service_instance['region'],
+                service_name=service_instance['service_name'], 
+                endpoint_url="http://my-endpoint.com",
+                config=config, 
+                **kwargs
+            )
+        else:
+            self.client, self.http_stubber = self.create_client(
+                region_name=service_instance['region'],
+                service_name=service_instance['service_name'], 
+                config=config, 
+                **kwargs
+            )
+
         self.http_stubber.add_response(status=200)
         if (len(service_instance['operations'])):
             op = getattr(self.client, service_instance['operations'][0])

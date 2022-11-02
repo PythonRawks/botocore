@@ -30796,7 +30796,7 @@
     "operations": ["delete_bucket"],
     "input_params": {"Bucket" : "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint/mybanner"},
     "region": "us-west-2",
-    "client_params": [],
+    "client_params": ["EndpointUrl"],
     "expected_endpoint": ""
   },
   {
